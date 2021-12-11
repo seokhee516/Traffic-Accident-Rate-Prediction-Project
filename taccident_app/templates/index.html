@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <title>New HTML Page</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/">교통사고 증감률 예측 서비스</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Predict</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">DashBoard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/information">Information</a>
+                </li>
+                </form>
+            </div>
+            </div>
+        </nav>
+        <center>
+            <br>
+            <h1>교통사고 증감률 예측 서비스</h1>
+            <br>
+            <p>일평균 교통사고 건수와 비교하여 증감률을 예측합니다.</p>
+            <br>
+            <h4>아래 항목을 선택해주세요</h4>
+            <br>
+            <form method="POST", action="{{url_for('predict')}}">
+                <p>언제 운전할 예정이신가요?</p>
+                <select name="월">
+                    <h1><center>&nbsp</center></h1>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="월" selected="selected">월</option></center>
+                </select>
+                <select name="요일">
+                    <h1><center>&nbsp</center></h1>
+                    <option value="일">일</option>
+                    <option value="월">월</option>
+                    <option value="화">화</option>
+                    <option value="화">화</option>
+                    <option value="수">수</option>
+                    <option value="목">목</option>
+                    <option value="금">금</option>
+                    <option value="토">토</option>
+                    <option value="요일" selected="selected">요일</option></center>
+                </select>
+                <br>
+                <br>
+                <p>어느 지역에서 운전할 예정이신가요?</p>
+                <select name="발생지_시도">
+                    <h1><center>&nbsp</center></h1>
+                    <option value="강원">강원</option>
+                    <option value="서울/경기/인천">서울/경기/인천</option>
+                    <option value="경남/경북/부산/울산/대구">경남/경북/부산/울산/대구</option>
+                    <option value="전남/전북/광주">전남/전북/광주</option>
+                    <option value="충남/충북/대전/세종">충남/충북/대전/세종</option>
+                    <option value="제주">제주</option>
+                    <option value="발생지_시도" selected="selected">지역</option></center>
+                </select>
+                <br>
+                <br>
+                <p>어떤 날씨가 예상되시나요?</p>
+                <select name="기상상태">
+                    <h1><center>&nbsp</center></h1>
+                    <option value="맑음">맑음</option>
+                    <option value="비">비</option>
+                    <option value="흐림">흐림</option>
+                    <option value="눈">눈</option>
+                    <option value="안개">안개</option>
+                    <option value="기타/불명">기타/모름</option>
+                    <option value="기상상태" selected="selected">기상상태</option></center>
+                </select>
+                <br>
+                <br>
+                <input type="submit" value="예측하기"></input>
+        </form>
+        </center>
+    </body>
+</html>
