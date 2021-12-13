@@ -1,1 +1,1 @@
-web: gunicorn --workers=3 'taccident_app:create_app()'
+web: gunicorn main:app --bind 0.0.0.0:${PORT}
