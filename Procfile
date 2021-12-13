@@ -1,0 +1,1 @@
+web: gunicorn --workers=3 'taccident_app:create_app()'
