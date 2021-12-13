@@ -1,1 +1,1 @@
-web: gunicorn taccident_app:app --bind 0.0.0.0:${PORT}
+web: gunicorn __init__:app --bind 0.0.0.0:${PORT}
