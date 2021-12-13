@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 import pandas as pd
 import numpy as np
+import os
 
 app = Flask(__name__)
 model = pickle.load(open("rf_model.pkl", "rb"))
@@ -34,6 +35,9 @@ def dashboard():
 def infomation():
     return render_template('information.html')
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host="0.0.0.0", port=port)
+    
     
