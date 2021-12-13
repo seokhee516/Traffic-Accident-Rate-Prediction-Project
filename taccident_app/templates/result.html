@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel='icon' href='static/img/car.jpg'>
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
@@ -32,12 +33,18 @@
             <br>
             <h1>예측 결과</h1>
             <h2>오늘의 교통사고 증감률은 {{rate_of_change}} % 입니다.</h2>
-            <h6>({{month}}월, {{day_of_the_week}}요일, {{city}}지역, {{weather}} 날씨)</h6>
+            <h6>(입력 값 : {{month}}월, {{day_of_the_week}}요일, {{city}}지역, {{weather}} 날씨)</h6>
             <br>
             <br>
             <h3>교통사고 증감률이란?</h3>
             <p>오늘의 교통사고 발생건수는 {{pred}}건으로 예측됩니다.</p>
             <p>교통사고 증감률은 일평균 교통사고 발생건수인 620건 대비 증감률입니다.</p>
+            <br>
+            <h3>예측에 영향을 준 요인들</h3>
+            <img src="{{url_for('static', filename='img/feature.jpg')}}">
+            <br>
+            <br>
+            <h5>요일, 월, 기상상태, 지역 순으로 영향을 많이 주었습니다.</h5>
         </center>
     </body>
 </html>
